@@ -78,49 +78,49 @@ La logica usada para resolver este problema es muy simple, como datos de entrada
 
 Para la generación de las listas es necesario implementar vectores, sin definir su tamaño, dado que el usuario podrá decidir el tamaño de cada vector,  especificado el tamaño que tendrán las listas, se implementará una repetición de introducción de datos, de modo que puedan ingresarse el nombre, costo y horas trabajadas para cada usuario, los datos del nombre y el sueldo a pagar se implementarán en otra lista, la cual se imprimirá al final para obtener la información de todos los empleados.
 
-  #Se solicita el núero de empleados
-  n = int(input("Numero de empleados "))
+        #Se solicita el núero de empleados
+        n = int(input("Numero de empleados "))
 
-  #Se crean 3 listas, unoa para cada variable que se empleará, así como 1 extra para la lista final de nombre y sueldo
-  
-  list_nombres = []
-  
-  list_horas = []
-  
-  list_salario = []
-  
-  Lista = []
+        #Se crean 3 listas, unoa para cada variable que se empleará, así como 1 extra para la lista final de nombre y sueldo
+        
+        list_nombres = []
+        
+        list_horas = []
+        
+        list_salario = []
+        
+        Lista = []
 
-  #Se crea un for que se repetirá las mismas veces que el tamaño del vectores
-  
-  #Se solicitan el nombre, costo y horas trabajadas de cada empleado
-  
-     for i in range(n):
-  
-      nombre = str(input("Ingrese el nombre del empleado: "))
-      
-      costo = float(input("Ingrese el costo por hora del empelado: "))
-      
-      horas = float(input("Ingrese las horas trabajadas por el empelado: "))
-      
-      
-      #Se realiza la operación y se guardan en cada una de las listas creadas
-      
-      total = horas * costo
-      
-      list_nombres.append(nombre)
-      
-      list_horas.append(horas)
-      
-      list_salario.append(total)
-  
-  #Se imprimen los resultados de cada empleado
-  
-  for i in range(n):
-  
-      Lista.append(list_nombres[i] + "  $" + str(list_salario[i]))
-      
-  print(Lista)
+        #Se crea un for que se repetirá las mismas veces que el tamaño del vectores
+        
+        #Se solicitan el nombre, costo y horas trabajadas de cada empleado
+        
+            for i in range(n):
+        
+            nombre = str(input("Ingrese el nombre del empleado: "))
+            
+            costo = float(input("Ingrese el costo por hora del empelado: "))
+            
+            horas = float(input("Ingrese las horas trabajadas por el empelado: "))
+            
+            
+            #Se realiza la operación y se guardan en cada una de las listas creadas
+            
+            total = horas * costo
+            
+            list_nombres.append(nombre)
+            
+            list_horas.append(horas)
+            
+            list_salario.append(total)
+        
+        #Se imprimen los resultados de cada empleado
+        
+        for i in range(n):
+        
+            Lista.append(list_nombres[i] + "  $" + str(list_salario[i]))
+            
+        print(Lista)
   
 
  
