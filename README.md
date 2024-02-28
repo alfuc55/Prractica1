@@ -316,52 +316,52 @@ funciones de direccion
         # regresar j
     return i1, j1
 
-def abajo(i1, j1):
-    i=i1
-    j=j1 # anterior 
-    while a[i1][j1]!=["X"] and i1 < n-1:
-        if a[i1+1][j1] == ["X"]:
+        def abajo(i1, j1):
+            i=i1
+            j=j1 # anterior 
+            while a[i1][j1]!=["X"] and i1 < n-1:
+                if a[i1+1][j1] == ["X"]:
+                    return i1, j1
+                    break
+                elif i1==4:
+                    a[i1][j1]=["V"]
+                    return i1,j1
+                else:
+                    a[i1][j1]=["V"]
+                i1 = i1+1
+                # regresar i
             return i1, j1
-            break
-        elif i1==4:
-            a[i1][j1]=["V"]
-            return i1,j1
-        else:
-            a[i1][j1]=["V"]
-        i1 = i1+1
-        # regresar i
-    return i1, j1
-def izquierda(i1, j1): 
-    i=i1 # anterior 
-    j=j1 # anterior 
-    while a[i1][j1]!=["X"] and j1 >= 0:
-        if a[i1][j1-1] == ["X"]:
+        def izquierda(i1, j1): 
+            i=i1 # anterior 
+            j=j1 # anterior 
+            while a[i1][j1]!=["X"] and j1 >= 0:
+                if a[i1][j1-1] == ["X"]:
+                    return i1, j1
+                    break
+                elif j1 == 0:
+                    a[i1][j1] = ["<-"]
+                    return i1, j1
+                else:
+                    a[i1][j1] = ["<-"]
+                j1 = j1-1
+                # regresar j
             return i1, j1
-            break
-        elif j1 == 0:
-            a[i1][j1] = ["<-"]
-            return i1, j1
-        else:
-            a[i1][j1] = ["<-"]
-        j1 = j1-1
-        # regresar j
-    return i1, j1
 
-def arriba(i1, j1): 
-    i=i1 # anterior 
-    j=j1 # anterior 
-    while a[i1][j1]!=["X"] and i1 >= 0:
-        if a[i1-1][j1] == ["X"]:
-            return i1, j1
-            break
-        elif i1==0:
-            a[i1][j1]=["A"]
-            return i1,j1
-        else:
-            a[i1][j1]=["A"]
-        i1 = i1-1
-        # regresar i
-        return i1, j1  
+        def arriba(i1, j1): 
+            i=i1 # anterior 
+            j=j1 # anterior 
+            while a[i1][j1]!=["X"] and i1 >= 0:
+                if a[i1-1][j1] == ["X"]:
+                    return i1, j1
+                    break
+                elif i1==0:
+                    a[i1][j1]=["A"]
+                    return i1,j1
+                else:
+                    a[i1][j1]=["A"]
+                i1 = i1-1
+                # regresar i
+                return i1, j1  
 
 funcion para imprimir la matriz 
     def imprimir():
