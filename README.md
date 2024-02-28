@@ -76,7 +76,15 @@ La logica usada para resolver este problema es muy simple, como datos de entrada
    
 **3) Crea una lista de nombre + sueldo por hora + horas trabajadas de al menos seis operadores. Imprime el nombre y el sueldo a pagar de cada operador.**
 
-Para la generación de las listas es necesario implementar vectores, sin definir su tamaño, dado que el usuario podrá decidir el tamaño de cada vector,  especificado el tamaño que tendrán las listas, se implementará una repetición de introducción de datos, de modo que puedan ingresarse el nombre, costo y horas trabajadas para cada usuario, los datos del nombre y el sueldo a pagar se implementarán en otra lista, la cual se imprimirá al final para obtener la información de todos los empleados.
+Para la solución de este problema se necesita usar listas, en donde se ingresaran los datos. Lo primero que se necesita saber es la cantidad de elementos que tendrá cada lista, por lo que el primer paso es solicitar al usuario el numero de empleados, una vez dado este valor se crear 4 llistas vacías donde se almacenaran los datos, una lista para nombre, otra para horas, otra para salario y una cuarta lista que contendrá toda la información anterior. 
+Para ingresar los datos requeridos a las listas se usa un for que ira desde el 0 hasta el numero ingresado por el usuario en el paso anterior. Dentro del for se pide al usuario que ingrese los datos del trabajar, el nombre, pago por hora y las horas trabajadas, una vez que el usuario ingreso los datos se agregan a las listas correspondientes con la función lista.append(dato). En este punto ya se deben encontrar llenas todas las listas con los datos correspondientes para los n trabajadores, el ultimo paso es ordenar todos los datos en una lista que contenga toda la información de todos los trabajadores. Para esto se usa otro ciclo for hasta el numero n. la estructura de la nueva lista es: 
+Nombre Trabajador 1   $ (salario trabajador 1)
+Nombre Trabajador 2 $ (salario trabajador 1)
+        ………………………………………
+Nombre Trabajador n $ (salario trabajador n)
+
+Por último, se imprime la lista completa en la terminal. 
+
 
         #Se solicita el núero de empleados
         n = int(input("Numero de empleados "))
@@ -128,7 +136,7 @@ Para la generación de las listas es necesario implementar vectores, sin definir
 
 **4) Crea una lista llamada numeros que contenga al menos 10 números. Calcula el promedio de los números pares y el producto de los números impares. Imprime los resultados.**
 
-Para generar el tamño de la lista, se pedirá al usuario ingresar un número mayor a 10, de modo que se cree un rango entre el 1 y el valor dado por el usuario, a partir de esto se harán 2 vectores, uno para los números pares y otro para los impares, luego se realizará un proceso para discenir en que vector colocar cada uno de los números, para ello puede implementarse una división entre 2, puesto que los pares nunca tendrán residuo, mientras que los impares lo tendrán, almacenados los números en sus listas correspondientes, se realizan los procesos del promedio y la multiplicación, sumando y multiplicando los valores respectivos a cada lista, teniendo en consideración que lel resultado de la suma de los pares se dividirá entre el tamaño del vector para obtener el promedio.
+Para resolver este problema se necesita solo un valor de entrada, en base al cual re realizaran las operaciones solicitadas. Por lo tanto, el primer paso es pedir al usuario que ingrese un numero que sea mayor a 1. Luego se debe generar un rango de valores entre 1 y el numero que ingreso el usuario, dicho rango será usado en las iteraciones del tipo for. El siguiente paso es definir las variables y crear las listas vacías que serán usadas, se necesitarán 2 listas una para números pares (numP) y otra para números impares (numI), una variable con valor inicial cero donde se guardara la suma de los números pares (sumaP), y por último una variable donde se guardara el producto de los impares con valor inicial iguala a 1 (producto).  El siguiente paso consiste en separar los pares de los impares, para realizar esto se usa una iteración for desde el 1 hasta el numero ingresado por el usuario, dentro de esta iteración a cada valor se le aplica el operador modulo para determinar si es un numero par, si lo es se agrega a la lista de números pares (numP.append(i)) y se suma este número a la variable sumaP. Si no es par, entonces es impar y se agrega a la lista de impares (numI.append(i)) y se multiplica por la variable producto y se actualiza con este nuevo valor. Al final de la iteración la lista de números pares y la lista de impares ha sido llenada correctamente. El siguiente paso consiste en imprimir la lista de los números pares para que el usuario pueda ver la operación que se realizó y como se hizo, para imprimir los números pares en una sola línea dentro de la terminal se usa la instrucción end=’’ dentro de print, de esta forma se pueden imprimir los elementos de las listas sin tener un salto de línea. Por ultimo se calcula el promedio de los pares mediante la división de la variable sumaP entre la longitud de la lista numP. Y se imprimen los resultados. 
 
         import numpy
         #Pedir un numero al usuario
@@ -176,7 +184,8 @@ Para generar el tamño de la lista, se pedirá al usuario ingresar un número ma
 
 **5) Crea un programa que solicite al usuario adivinar un número secreto. El programa debe generarun número aleatorio entre 1 y 10, y el usuario debe intentar adivinarlo. El programa debe proporcionar pistas si el número ingresado por el usuario es demasiado alto o bajo. El bucle while debe continuar hasta que el usuario adivine correctamente. Al final se debe imprimir en cuantos intentos el usuario logró adivinar el número.**
 
-Lo primeroe s crear el rango de valores, posteriormente se pedirá al usuario ingresar un valor para ver si lo adivinó, se realiza la comparación entre el número secreto y el valor introducido por el usuario, si este es diferente se dará por incorrecto el intento y se comparará con la respuesta correcta, esto para determinar si se trata de un valor mayor o menor, de modo que sea una ayuda para el usuario, este proceso se repetirá de maenra indefinida hasta que el usuario logre acertar el número, cuando lo adivine se romperá el bucle creado y se felicitará al usuario, mostrando además el número de intentos que le costó adivinar.
+
+Para este problema se requiere crear una variable que contenga un numero aleatorio entre 1 y 10, para lograrlo se usa la función random incluida dentro de la librería random, por lo que para hacer uso de esta función es necesario importar dicha librería. El programa empieza por la creación del numero aleatorio y pide al usuario que intente adivinar el numero ingresando un número. El siguiente paso consiste en un bucle indefinido de tipo while, que se estará repitiendo hasta que el dato ingresado por el usuario se igual que el numero generado aleatoriamente. Dentro del bucle while, primero se calcula la diferencia entre el numero aleatorio y el ingresado por el usuario, si dicha diferencia es mayor que cero significa que el usuario ingreso un numero menor al generado aleatoriamente por lo que se le dará la pista al usuario de que el numero debe ser mayor, de lo contrario se le dará el mensaje de que el numero deberá ser menor y se le pedirá al usuario ingresar un número.  Por ultimo cuando la condición del bucle while no se cumpla se procederá a imprimir el mensaje “Lo has logrado”. 
 
             import random
             #generar numero aletario entre 1 y 10
@@ -196,6 +205,10 @@ Lo primeroe s crear el rango de valores, posteriormente se pedirá al usuario in
 
 **6) Robot explorador: El programa debe generar una matriz de al menos 5x5. El robot inicia su camino en la posición (0,0) de la matriz y debe salir en la posición (4,4) o la máxima posición si se cambia el tamaño de matriz. El numero y la posición de los obstáculos es aleatoria. El robot solo puede avanzar, girar a la izquierda o a la derecha para buscar un camino libre, en el eventual caso que el robot no pueda salir debe imprimir en pantalla “Imposible llegar al destino”. En caso de que el robot llegue a su destino final deberá imprimir el mapa, con los espacios libres yobstáculos de la siguiente forma:
 X obstáculo o libre.**
+
+
+Para resolver este problema el primer paso es definir el tamaño de la matriz definiendo los valores de las variables m y n. que están establecidas en le programa como 5 y 5. Después se crea una matriz de tamaño m x n de puros ceros. El siguiente paso es agregar obstáculos a la matriz que son representados con un X, para realizar esto se usa un ciclo for y mediante un numero aleatorio se determina la posición de los obstáculos, es importante que el inicio de la matriz (0,0) y el final (4,4) siempre deben estar libres, es decir tener una O. Una vez establecida la matriz se procede a la solución, como primer paso se establecen las variables i y j con las coordenadas de inicio, en este caso (0,0), después en un bucle while se procede a usar la funcion buscar la cual fue creada para resolver este problema, y dependiendo de el valor devuelto por la función buscar se procede a ejecutar el movimiento correspondiente, que también son funciones definidas. 
+  
 
             import random
             # m,n tamano de la matriz
@@ -243,3 +256,116 @@ X obstáculo o libre.**
                     i, j= derecha(i,j)
                 print(i,j)
             imprimir()
+
+
+funcion buscar 
+
+
+        def buscar(i1, j1):
+    if j1==4 and i1<n-1:
+        if a[i1+1][j1]!=["X"] and i1<(n):
+            direccion= 'abajo'
+            return direccion
+        elif a[i1][j1-1]!=["X"] and j1>0:
+            direccion= 'izquierda'
+            return direccion
+        elif a[i1-1][j1] != ["X"] and i1>0:
+            direccion= 'arriba'
+            return direccion
+    elif i1==4 and j1<m-1:
+        if a[i1][j1+1]!=["X"] and j1<(m):
+            direccion = 'derecha'
+            return direccion
+        elif a[i1-1][j1] != ["X"] and i1>0:
+            direccion= 'arriba'
+            return direccion
+        elif a[i1][j1-1]!=["X"] and j1>0:
+            direccion= 'izquierda'
+            return direccion
+    elif i1==4  and j1 ==4:
+        print("")
+    else:
+        if a[i1][j1+1]!=["X"] and j1<(m):
+            direccion = 'derecha'
+            return direccion
+        elif a[i1+1][j1]!=["X"] and i1<(n):
+            direccion= 'abajo'
+            return direccion
+        elif a[i1][j1-1]!=["X"] and j1>0:
+            direccion= 'izquierda'
+            return direccion
+        elif a[i1-1][j1] != ["X"] and i1>0:
+            direccion= 'arriba'
+            return direccion
+
+funciones de direccion 
+
+        def derecha(i1, j1): 
+    i=i1
+    j=j1
+    while a[i1][j1]!=["X"] and j1 < m-1:
+        if a[i1][j1+1] == ["X"]:
+            return i1, j1
+            break
+        elif j1 == 4:
+            a[i1][j1] = ["->"]
+            return i1, j1
+        else:
+            a[i1][j1] = ["->"]
+        j1 = j1+1
+        # regresar j
+    return i1, j1
+
+def abajo(i1, j1):
+    i=i1
+    j=j1 # anterior 
+    while a[i1][j1]!=["X"] and i1 < n-1:
+        if a[i1+1][j1] == ["X"]:
+            return i1, j1
+            break
+        elif i1==4:
+            a[i1][j1]=["V"]
+            return i1,j1
+        else:
+            a[i1][j1]=["V"]
+        i1 = i1+1
+        # regresar i
+    return i1, j1
+def izquierda(i1, j1): 
+    i=i1 # anterior 
+    j=j1 # anterior 
+    while a[i1][j1]!=["X"] and j1 >= 0:
+        if a[i1][j1-1] == ["X"]:
+            return i1, j1
+            break
+        elif j1 == 0:
+            a[i1][j1] = ["<-"]
+            return i1, j1
+        else:
+            a[i1][j1] = ["<-"]
+        j1 = j1-1
+        # regresar j
+    return i1, j1
+
+def arriba(i1, j1): 
+    i=i1 # anterior 
+    j=j1 # anterior 
+    while a[i1][j1]!=["X"] and i1 >= 0:
+        if a[i1-1][j1] == ["X"]:
+            return i1, j1
+            break
+        elif i1==0:
+            a[i1][j1]=["A"]
+            return i1,j1
+        else:
+            a[i1][j1]=["A"]
+        i1 = i1-1
+        # regresar i
+        return i1, j1  
+
+funcion para imprimir la matriz 
+    def imprimir():
+    for i in range(n):
+        for j in range(m):
+            print(a[i][j], end=" ")
+        print(" ")

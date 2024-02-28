@@ -68,7 +68,6 @@ def arriba(i1, j1):
         return i1, j1  
     
 def buscar(i1, j1):
-    # bscar izq 
     if j1==4 and i1<n-1:
         if a[i1+1][j1]!=["X"] and i1<(n):
             direccion= 'abajo'
